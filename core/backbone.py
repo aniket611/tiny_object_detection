@@ -5,7 +5,11 @@ def cspdarknet53_tiny(input_data):
     input_data=common.convolutional(input_data,(3,3,3,32),downsample=True)
     input_data=common.convolutional(input_data,(3,3,32,64),downsample=True)
     input_data = common.convolutional(input_data, (3, 3, 64, 64))
-
+# There are 3 CSP network structure below. Need to check optimal network structure.
+# 1 CSP + 2 conv?
+# 2 CSP
+# 1 CSP + Breaking conv into depthwise conv like Mobilenetv2?
+# etc.
     route = input_data
     input_data = common.route_group(input_data,2,1)
     input_data = common.convolutional(input_data,(3,3,32,32))
