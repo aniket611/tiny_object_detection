@@ -1,3 +1,4 @@
+# Definitions of imports should follow order as per PEP* quality standard
 import numpy as np
 import tensorflow as tf
 import core.backbone as backbone
@@ -5,7 +6,7 @@ import core.common as common
 from core.config import cfg
 import core.utils as utils
 
-
+# Please write comments in all the function definition. Check PEP8 standard and follow the coding practices mentioned in it.
 def YOLOv4_tiny(input_layer,NUM_CLASSES):
     route_1 , conv = backbone.cspdarknet53_tiny(input_layer)
     conv = common.convolutional(conv , (1,1,512,256))
